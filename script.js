@@ -1,4 +1,15 @@
-let myLibrary = [];
+let myLibrary = [
+    {
+        title: "eileen", 
+        year: "2020", 
+        author: "otessa", 
+    },
+    {
+        title: "emma", 
+        year: "2022", 
+        author: "austen"
+    }
+];
 
 let libTitles = [];
 
@@ -8,14 +19,15 @@ function Book(title, year, author) {
   this.author = author;
 }
 
-function addBookToLibrary() {
-  // do stuff here
+function addBookToLibrary(title, year, author) {
+  const book = new Book(title, year, author)
+  myLibrary.push(book);
+  displayBooks();
 }
 
 function displayBooks(){
     for(var i = 0; i < myLibrary.length; i++){
         
-
         libTitles.push(myLibrary[i].title);
         console.log(myLibrary[i].title);
     }
@@ -30,24 +42,9 @@ function newBook(){
     var title = prompt("Title");
     var year = prompt("Year");
     var author = prompt("Author");
-    var newBook = new Book(title, year, author);
-    myLibrary.push(newBook);
-
-    displayBooks();
+    addBookToLibrary(title, year, author);
 }
 
-myLibrary = [
-    {
-        title: "eileen", 
-        year: "2020", 
-        author: "otessa", 
-    },
-    {
-        title: "emma", 
-        year: "2022", 
-        author: "austen"
-    }
-];
 
 displayBooks();
 
