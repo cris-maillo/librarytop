@@ -1,13 +1,13 @@
 let myLibrary = [
     {
-        title: "lord of rings", 
+        title: "Lord of Rings", 
         year: "2020", 
-        author: "tolkien", 
+        author: "Tolkien", 
     },
     {
-        title: "emma", 
+        title: "Emma", 
         year: "2022", 
-        author: "jane austen"
+        author: "Jane Austen"
     }
 ];
 
@@ -34,7 +34,7 @@ function displayLibrary(){
 
     for(var i = 0; i < myLibrary.length; i++){
         let bookCard = document.createElement("div");
-        bookCard.className = "card";
+        bookCard.className = "card block";
         cardContainer.appendChild(bookCard);
 
         // display title

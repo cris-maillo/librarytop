@@ -6,25 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/blocks.css/dist/blocks.min.css" />
     <script src="script.js" defer></script>
 </head>
 <body>
-    <button id="btn" onclick="newBook()">New Book</button>
+    <h1 class="block">My Library</h1>
 
-    <div>
-        <h1>Hello</h1>
-        <h2></h2>
-        <h3></h3>
-        <input type="checkbox" id="read">
-        <label for="read">Read?</label>
-    </div>
     
+    <!-- <input type="checkbox" id="read">
+    <label for="read">Read?</label> -->
+
 
     <div id="cardContainer">
         
     </div>
 
     <p id="lib"></p>
+
+    <button id="btn" class="block" onclick="newBook()">New Book</button>
+
     
 </body>
 </html>
