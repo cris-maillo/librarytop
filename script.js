@@ -1,17 +1,15 @@
 let myLibrary = [
     {
-        title: "eileen", 
+        title: "lord of rings", 
         year: "2020", 
-        author: "otessa", 
+        author: "tolkien", 
     },
     {
         title: "emma", 
         year: "2022", 
-        author: "austen"
+        author: "jane austen"
     }
 ];
-
-let libTitles = [];
 
 function Book(title, year, author) {
   this.title = title;
@@ -20,22 +18,42 @@ function Book(title, year, author) {
 }
 
 function addBookToLibrary(title, year, author) {
-  const book = new Book(title, year, author)
+  const book = new Book(title, year, author);
   myLibrary.push(book);
-  displayBooks();
+  
+  displayLibrary();
+   
 }
 
-function displayBooks(){
-    for(var i = 0; i < myLibrary.length; i++){
-        
-        libTitles.push(myLibrary[i].title);
-        console.log(myLibrary[i].title);
+function displayLibrary(){
+    const cardContainer = document.getElementById("cardContainer");
+    
+    while (cardContainer.firstChild) {
+        cardContainer.removeChild(cardContainer.lastChild);
     }
 
+    for(var i = 0; i < myLibrary.length; i++){
+        let bookCard = document.createElement("div");
+        bookCard.className = "card";
+        cardContainer.appendChild(bookCard);
 
+        // display title
+        let bookTitle = document.createElement("h2");
+        bookTitle.innerHTML = myLibrary[i].title;
+        bookTitle.className = "title";
+        bookCard.appendChild(bookTitle);
 
+        // display year
+        let bookAuthor = document.createElement("h3");
+        bookAuthor.innerHTML = myLibrary[i].author;
+        bookCard.appendChild(bookAuthor);
+
+        // display author
+        let bookYear = document.createElement("h4");
+        bookYear.innerHTML = myLibrary[i].year;
+        bookCard.appendChild(bookYear);
+    }
     console.log(myLibrary);
-    document.getElementById("lib").innerHTML = libTitles;
 }
 
 function newBook(){
@@ -45,11 +63,7 @@ function newBook(){
     addBookToLibrary(title, year, author);
 }
 
-
-displayBooks();
-
 function readStatus(){
-    var read = prompt("Have you read this book?");
     if(read === "yes"){
         console.log("You have read this book");
     }
@@ -58,27 +72,13 @@ function readStatus(){
     }
 }
 
-// // Write a function that loops through the array and displays 
-// each book on the page. 
-// You can display them in some sort of table, or each on their 
-// own “card”. It might help for now to manually add a few books 
-// to your array so you can see the display.
 
+displayLibrary();
 
-// // Add a “NEW BOOK” button that brings up a form allowing 
-// users to input the details for the new book: author, title, 
-// number of pages, whether it’s been read and anything else 
-// you might want.
 
 
 // // Add a button on each book’s display to remove the book 
 // from the library.
-
-// // You will need to associate your DOM elements with the 
-// actual book objects in some way. One easy solution is giving 
-// them a data-attribute that corresponds to the index of the 
-// library array.
-
 
 // // Add a button on each book’s display to change its read status.
 
