@@ -52,6 +52,13 @@ function displayLibrary(){
         let bookYear = document.createElement("h4");
         bookYear.innerHTML = myLibrary[i].year;
         bookCard.appendChild(bookYear);
+
+        // display button
+        let bookRemove = document.createElement("button");
+        bookRemove.innerHTML = "Remove";
+        bookRemove.className = "block";
+        bookRemove.addEventListener("click", removeBook);
+        bookCard.appendChild(bookRemove);
     }
     console.log(myLibrary);
 }
@@ -70,6 +77,10 @@ function readStatus(){
     else{
         console.log("You have not read this book");
     }
+}
+
+function removeBook(){
+    console.log("removiing");
 }
 
 

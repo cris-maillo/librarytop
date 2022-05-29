@@ -31,6 +31,10 @@ h1{
     --block-background-color: rgb(60, 60, 193);
 }
 
+button {
+    --block-background-color: rgb(255, 255, 255);
+}
+
 h2, h3, h4{
     color: white;
 }
