@@ -35,6 +35,6 @@ button {
     --block-background-color: rgb(255, 255, 255);
 }
 
-h2, h3, h4{
+h2, h3, h4, label{
     color: white;
 }

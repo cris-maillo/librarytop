@@ -1,25 +1,27 @@
-let bookCard;
-
 let myLibrary = [
     {
         title: "Lord of Rings", 
         year: "2020", 
-        author: "Tolkien", 
+        author: "Tolkien",
+        read: true 
     },
     {
         title: "Emma", 
         year: "2022", 
-        author: "Janten"
+        author: "Janten",
+        read: false
     },
     {
         title: "Jane", 
         year: "2022", 
-        author: "Austen"
+        author: "Austen",
+        read: true
     },
     {
         title: "Eileen", 
         year: "2022", 
-        author: "Jten"
+        author: "Jten",
+        read: false
     }
 ];
 
@@ -45,7 +47,7 @@ function displayLibrary(){
     }
 
     for(var i = 0; i < myLibrary.length; i++){
-        bookCard = document.createElement("div");
+        let bookCard = document.createElement("div");
         bookCard.id = i;
         bookCard.className = "card block";
         cardContainer.appendChild(bookCard);
@@ -66,6 +68,16 @@ function displayLibrary(){
         bookYear.innerHTML = myLibrary[i].year;
         bookCard.appendChild(bookYear);
 
+        //read checbox
+        let label = document.createElement('label');
+        let bookRead = document.createElement("INPUT");
+        bookRead.setAttribute("type", "checkbox");
+        bookRead.checked = myLibrary[i].read;
+        label.appendChild(bookRead);
+        label.appendChild(document.createTextNode("Read"));
+        label.addEventListener("click", toggleRead);
+        bookCard.appendChild(label);
+
         // display button
         let bookRemove = document.createElement("button");
         bookRemove.innerHTML = "Remove";
@@ -83,13 +95,16 @@ function newBook(){
     addBookToLibrary(title, year, author);
 }
 
-function readStatus(){
-    if(read === "yes"){
-        console.log("You have read this book");
+function toggleRead(){
+    let i = myLibrary.findIndex(book => book.title === this.parentNode.childNodes[0].innerHTML);
+    if(myLibrary[i].read === true){
+        myLibrary[i].read = false;
     }
     else{
-        console.log("You have not read this book");
+        myLibrary[i].read = true;
     }
+
+    displayLibrary();
 }
 
 function removeBook(){
@@ -102,10 +117,6 @@ function removeBook(){
 
 displayLibrary();
 
-
-
-// // Add a button on each book’s display to remove the book 
-// from the library.
 
 // // Add a button on each book’s display to change its read status.
 
