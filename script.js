@@ -1,3 +1,5 @@
+let bookCard;
+
 let myLibrary = [
     {
         title: "Lord of Rings", 
@@ -7,7 +9,17 @@ let myLibrary = [
     {
         title: "Emma", 
         year: "2022", 
-        author: "Jane Austen"
+        author: "Janten"
+    },
+    {
+        title: "Jane", 
+        year: "2022", 
+        author: "Austen"
+    },
+    {
+        title: "Eileen", 
+        year: "2022", 
+        author: "Jten"
     }
 ];
 
@@ -33,7 +45,8 @@ function displayLibrary(){
     }
 
     for(var i = 0; i < myLibrary.length; i++){
-        let bookCard = document.createElement("div");
+        bookCard = document.createElement("div");
+        bookCard.id = i;
         bookCard.className = "card block";
         cardContainer.appendChild(bookCard);
 
@@ -80,7 +93,10 @@ function readStatus(){
 }
 
 function removeBook(){
-    console.log("removiing");
+    let index = myLibrary.findIndex(book => book.title === this.parentNode.childNodes[0].innerHTML);
+    myLibrary.splice(index, 1);
+
+    displayLibrary();
 }
 
 
