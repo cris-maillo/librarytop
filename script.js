@@ -1,32 +1,29 @@
 let myLibrary = [
     {
         title: "The Lord of the Rings", 
-        year: "1954", 
         author: "J. R. R. Tolkien",
         read: true 
     },
     {
         title: "Emma", 
-        year: "1815", 
         author: "Jane Austen",
         read: false
     },
     {
         title: "Eileen", 
-        year: "2015", 
         author: "Ottessa Moshfegh",
         read: true
     }
 ];
 
-function Book(title, year, author) {
+function Book(title, author, read) {
   this.title = title;
-  this.year = year;
   this.author = author;
+  this.read = read;
 }
 
-function addBookToLibrary(title, year, author) {
-  const book = new Book(title, year, author);
+function addBookToLibrary(title, author, read) {
+  const book = new Book(title, author, read);
   myLibrary.push(book);
   
   displayLibrary();
@@ -52,15 +49,10 @@ function displayLibrary(){
         bookTitle.className = "title";
         bookCard.appendChild(bookTitle);
 
-        // display year
-        let bookAuthor = document.createElement("h3");
+        // display author
+        let bookAuthor = document.createElement("h4");
         bookAuthor.innerHTML = myLibrary[i].author;
         bookCard.appendChild(bookAuthor);
-
-        // display author
-        let bookYear = document.createElement("h4");
-        bookYear.innerHTML = myLibrary[i].year;
-        bookCard.appendChild(bookYear);
 
         //read checbox
         let label = document.createElement('label');
@@ -84,9 +76,9 @@ function displayLibrary(){
 
 function newBook(){
     var title = prompt("Title");
-    var year = prompt("Year");
     var author = prompt("Author");
-    addBookToLibrary(title, year, author);
+    var read = prompt("Read true/false");
+    addBookToLibrary(title, author, read);
 }
 
 function toggleRead(){

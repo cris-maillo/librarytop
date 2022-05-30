@@ -29,7 +29,7 @@ h1{
     min-width: 300px;
     border-radius: 20px;
     margin: 50px;
-    --block-background-color: rgb(60, 60, 193);
+    --block-background-color: rgb(118, 118, 229);
 }
 
 button {
@@ -37,6 +37,18 @@ button {
     font-size: 15px;
 }
 
-h2, h3, h4, label{
+h3, h4, label{
     color: white;
+    margin: 10px;
+    font-weight: normal;
 }
+
+h2{
+    color: white;
+    margin: 10px;
+}
+
+.card button{
+    margin: 20px 10px;
+}
+
