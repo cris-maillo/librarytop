@@ -1,27 +1,21 @@
 let myLibrary = [
     {
-        title: "Lord of Rings", 
-        year: "2020", 
-        author: "Tolkien",
+        title: "The Lord of the Rings", 
+        year: "1954", 
+        author: "J. R. R. Tolkien",
         read: true 
     },
     {
         title: "Emma", 
-        year: "2022", 
-        author: "Janten",
+        year: "1815", 
+        author: "Jane Austen",
         read: false
-    },
-    {
-        title: "Jane", 
-        year: "2022", 
-        author: "Austen",
-        read: true
     },
     {
         title: "Eileen", 
-        year: "2022", 
-        author: "Jten",
-        read: false
+        year: "2015", 
+        author: "Ottessa Moshfegh",
+        read: true
     }
 ];
 
@@ -49,7 +43,7 @@ function displayLibrary(){
     for(var i = 0; i < myLibrary.length; i++){
         let bookCard = document.createElement("div");
         bookCard.id = i;
-        bookCard.className = "card block";
+        bookCard.className = "card block fixed";
         cardContainer.appendChild(bookCard);
 
         // display title
@@ -103,8 +97,6 @@ function toggleRead(){
     else{
         myLibrary[i].read = true;
     }
-
-    displayLibrary();
 }
 
 function removeBook(){
@@ -116,9 +108,3 @@ function removeBook(){
 
 
 displayLibrary();
-
-
-// // Add a button on each book’s display to change its read status.
-
-// // To facilitate this you will want to create the function 
-// that toggles a book’s read status on your Book prototype instance.

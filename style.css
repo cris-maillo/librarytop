@@ -3,10 +3,11 @@
 }
 
 body{
-    width: 90%;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
 }
 
 h1{
@@ -14,25 +15,26 @@ h1{
     text-align: center;
     color: #fff;
     background: #000;
-    width: 50%;
-    margin: 100px;
+    padding: 20px;
 }
+
 
 #cardContainer{
     display: flex; 
-    flex: wrap;  
+    flex-wrap: wrap; 
+    justify-content: center; 
 }
 
 .card {
-    width: 200px;
-    padding: 20px;
+    min-width: 300px;
     border-radius: 20px;
-    margin: 20px;
+    margin: 50px;
     --block-background-color: rgb(60, 60, 193);
 }
 
 button {
     --block-background-color: rgb(255, 255, 255);
+    font-size: 15px;
 }
 
 h2, h3, h4, label{
